@@ -53,7 +53,7 @@ jobs:
         run: npx playwright test tests/unit/security-sanitizer.spec.ts
 
       - name: Run Playwright Regression Test Suite
-        run: npx playwright test --project=${{ matrix.browser }} --reporter=list,json:test-results/report.json,html:playwright-report
+        run: npx playwright test tests/regression --project=${{ matrix.browser }}
 
       - name: Upload Test Report & Trace Artifacts on Failure
         if: failure()
